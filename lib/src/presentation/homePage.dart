@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pr6/src/presentation/profilePage.dart';
+import 'package:flutter_pr6/src/presentation/settingPage.dart';
+import 'package:go_router/go_router.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,13 +23,36 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("pr6"),
       ),
-      body: _arrayPage[_currentPageIndex],
+      body: Center(
+        child: _arrayPage[_currentPageIndex],
+      ),
 
       // NavigationBar
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
-            _currentPageIndex = index;
+            switch (index) {
+              // HomePage
+              case 0:
+                _currentPageIndex = index;
+                break;
+              // ChatPage
+              case 1:
+                context.go('/chat');
+                break;
+              // ProfilePage
+              case 2:
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProfilePage()),);
+                break;
+              // SettingPage
+              case 3:
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingPage()),);
+                break;
+              // ThemePage
+              case 4:
+                _currentPageIndex = index;
+                break;
+            };
           });
         },
         selectedIndex: _currentPageIndex,

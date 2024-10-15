@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'src/homePage.dart';
+import 'src/presentation/homePage.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_pr6/src/presentation/chatPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,6 +9,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
+  // final GoRouter _router = GoRouter(
+  //   routes: [
+  //     GoRoute(path: '/', builder: (context, state) => HomePage(),),
+  //     GoRoute(path: '/chat', builder: (context, state) => ChatPage(),),
+  //   ],
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +28,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: HomePage(),
+      //routerConfig: _router,
     );
   }
 }
