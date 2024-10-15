@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pr6/src/presentation/homePage.dart';
 import 'package:go_router/go_router.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class ThemePage extends StatefulWidget {
+  const ThemePage({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<ThemePage> createState() => _ThemePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ThemePageState extends State<ThemePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("pr6"),
@@ -20,12 +19,11 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Center(
         child: Column(
           children: [
-            const Text("Profile Page", style: TextStyle(fontSize: 24)),
+            const Text("Theme Page", style: TextStyle(fontSize: 24)),
             const SizedBox(height: 24,),
             ElevatedButton(
               onPressed: () { 
                 context.go('/');
-                //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
               },
               child: Text("Назад"),
             ),

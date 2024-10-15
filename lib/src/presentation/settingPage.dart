@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -22,7 +23,8 @@ class _SettingPageState extends State<SettingPage> {
              const SizedBox(height: 30,),
              ElevatedButton(
               onPressed: (){
-                Navigator.pop(context);
+                context.go('/');
+                //Navigator.pop(context);
               },
               child: Text("Назад"),
              )

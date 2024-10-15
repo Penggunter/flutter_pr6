@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
             switch (index) {
               // HomePage
               case 0:
+                // context.go('/home');
                 _currentPageIndex = index;
                 break;
               // ChatPage
@@ -42,15 +43,17 @@ class _HomePageState extends State<HomePage> {
                 break;
               // ProfilePage
               case 2:
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProfilePage()),);
+                context.go('/profile');
+                //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProfilePage()),);
                 break;
               // SettingPage
               case 3:
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingPage()),);
+                context.go('/setting');
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingPage()),);
                 break;
               // ThemePage
               case 4:
-                _currentPageIndex = index;
+                context.go('/theme');
                 break;
             };
           });
